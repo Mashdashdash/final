@@ -1,0 +1,670 @@
+a {
+    color: black;
+}
+
+a:hover, a:active, a:visited {
+    color: inherit;
+}
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "glodok", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+    margin-bottom: 40px; /* Adjust the value as needed */
+    margin-left: 50px; /* Adjust the value as needed */
+ }
+
+
+
+body {
+    font-family: 'Mark Pro', sans-serif;
+    background: #DEE1E5;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 140px;
+    background-color: #DEE1E5;
+    color: #000;
+    border-bottom: 0px solid #ccc;
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+  
+  header.scrolled {
+    background-color: #2f3435;
+    color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    height: 80px;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin-top: 40px;
+    text-align: left;
+    transition: font-size 0.1s ease-in-out, margin-top 0.1s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  header.scrolled h1 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* border: 2px solid red; */
+    z-index: 2;
+    /* position: relative; */
+}
+
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* border: 2px solid red; */
+    z-index: -1;
+    /* position: relative; */
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 3;
+    
+}
+
+.counter-container #counter1,
+.counter-container #counter2,
+.counter-container #counter3,
+.counter-container #counter4,
+.counter-container #counter5 {
+    font-size: 24px; /* Change the value to the desired font size */
+    font-weight: 600;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.counter-text {
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-left: 10px; /* Add some spacing between the counter and the text */
+}
+
+.container1 .left-section {
+    background: url(../images/sherbrooke_background.svg) no-repeat fixed;
+    background-size: 50%;
+    background-position: left;
+    overflow: hidden;
+}
+
+.container .left-section {
+    background: url(../images/sherbrooke_background_bike.svg) no-repeat fixed;
+    background-size: 50%;
+    background-position: left;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.container2 .left-section {
+    background: url(../images/sherbrooke_background_bus.svg) no-repeat fixed;
+    background-size: 50%;
+    background-position: left;
+}
+
+.container.mediumh {
+    position: relative;
+  }
+
+.left-section {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: center; */
+    /* border:2px green solid; */
+ }
+
+.right-section {
+    width: 50%;
+    position: sticky;
+    top: 100px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info-text {
+    font-size: 1rem;
+}
+
+
+.traffic-light {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.popup-text {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    height: 80px;
+    background-color: black;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+  }
+  
+  .hand-wrapper:hover .popup-text {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  /* #popup-text {
+    display: none;
+  } */
+  
+  /* .hand-wrapper:hover #popup-text {
+    display: block;
+  } */
+
+.hand-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 60px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    overflow: hidden;
+    transform-origin: center center;
+    
+    
+  }
+  
+  .hand-image {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    background-image: url('hand.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  
+  .hand-image:hover:not(.flashing) {
+    background-image: url('ped.svg');
+  }
+
+  .hand-wrapper:hover {
+    width: 200px;
+  border-radius: 20px;
+  }
+
+  .hand-wrapper img {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .hand-image.flashing {
+    animation: flashHand 0.5s linear 3 forwards;
+  }
+  
+  @keyframes flashHand {
+    0%, 50% {
+      opacity: 1;
+      background-image: url('hand.svg');
+    }
+    25%, 75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      background-image: url('hand.svg');
+    }
+  }  
+
+
+
+#street-canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.green-bike-lane {
+    position: absolute;
+    left: 75px;
+    right: 75px;
+    background-color: #40D869;
+    height: 20px;
+    bottom: -20px;
+    z-index: 10;
+  }
+  
+  .green-bike-lane.right {
+    left: auto;
+    right: 75px;
+  } */
+
+
+.right-section.image-container {
+    display: flex;
+    justify-content: space-around; /* Optional: Add space between images */
+}
+
+/* MOVING ITEMS */
+
+  .parent {
+    position: relative;
+  }
+
+  .moving-objects-container {
+    position: relative;
+  }
+
+  .car-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .car-image {
+    position: absolute;
+    left: 5%;
+    top: 30px; /* Adjust the vertical position (Y-coordinate) */
+    width: 85px;
+    height: auto;
+    z-index: 1;
+  
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  
+  .car-image-1 {
+    animation-name: carAnim1;
+    animation-delay: 2s;
+  }
+  
+.car-image-2 {
+    animation-name: carAnim2;
+    animation-delay: 4s; /* Delay the start of the animation */
+    top: -20px;
+  }
+  
+.car-image-3 {
+    animation-name: carAnim3;
+    animation-delay: 6s; /* Delay the start of the animation */
+    top: -70px;
+  }
+  
+  @keyframes carAnim1 {
+    0% { top: -20px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; }
+  }
+  
+  @keyframes carAnim2 {
+    0% { top: -20px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; } /* Adjust the final top value */
+  }
+  
+  @keyframes carAnim3 {
+    0% { top: -70px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; } /* Adjust the final top value */
+  }
+  
+  .car-image-1,
+  .car-image-2,
+  .car-image-3 {
+    visibility: hidden;
+  }
+
+.car-image-lane2 {
+    left: 12%; /* Adjust the horizontal position (X-coordinate) for lane 2 */
+    animation-duration: 6s;
+  }
+  
+.car-image-lane3 {
+    left: 18.5%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-duration: 4.5s;
+  }
+
+.car-image.car-image-2.car-image-lane2 {
+    animation-duration: 6s;
+}
+
+.bus-image {
+    position: absolute;
+    left: 11.5%; /* Adjust the horizontal position (X-coordinate) */
+    top: 30px; /* Adjust the vertical position (Y-coordinate) */
+    width: 70px; /* Add this line to set the initial width */
+    height: 90px;
+    z-index: 1;
+
+    animation-name: busAnim;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.car-image, .bike-image, .bus-image {
+    /* Other CSS properties */
+    width: 150px;
+    height: auto;
+    transition: width 0.5s, height 0.5s; /* Add transitions */
+}
+
+  
+@keyframes busAnim {
+    0% { top: -150px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; }
+  }
+
+.bike-image {
+    position: absolute;
+    left: 6%; /* Adjust the horizontal position (X-coordinate) */
+    top: 10px; /* Adjust the vertical position (Y-coordinate) */
+    width: 4vh; /* Add this line to set the initial width */
+    height: auto;
+    z-index: 1;
+
+    animation-name: bikeAnim;
+    animation-duration: 6s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    visibility: hidden;
+}
+  
+  @keyframes bikeAnim {
+    
+    0% {
+        top: -150px;
+        visibility: visible; /* Add this line to make the bike visible when the animation starts */
+      }
+      100% {
+        top: 100vh;
+        visibility: visible;
+      }
+  }
+
+
+
+/* For small screens */
+@media (max-width: 767px) {
+    .car-image {
+        width: 30px;
+    }
+    .bike-image {
+        width: 20px;
+    }
+    .bus-image {
+        width: 40px;
+    }
+}
+
+/* For medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+    .car-image {
+        width: 50px;
+    }
+    .bike-image {
+        width: 30px;
+    }
+    .bus-image {
+        width: 55px;
+    }
+    
+
+}
+
+/* For large screens */
+@media (min-width: 992px) {
+    .car-image {
+        width: 80px;
+    }
+    .bike-image {
+        width: 50px;
+    }
+    .bus-image {
+        width: 90px;
+    }
+}
+
+.bike-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+  }
+
+  .bike-container .bike-image {
+    position: absolute;
+    width: 10vw; /* Adjust this value to the desired size relative to the viewport width */
+    height: auto;
+    z-index: 1;
+  
+    animation-duration: 4.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  
+.bike-container .bike-image.bike-lane {
+    position: absolute;
+    left: 6%; /* Adjust the horizontal position (X-coordinate) */
+    top: 10px; /* Adjust the vertical position (Y-coordinate) */
+    width: 56px; /* Add this line to set the initial width */
+    height: 120px;
+    z-index: 1;
+
+    animation-name: bikeAnim;
+    animation-duration: 6s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    visibility: hidden;
+}
+  
+  .bike-container .bike-image.bike-lane.bike-1 {
+    left: 9%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 0s;
+    animation-duration: 4.5s;
+  }
+  
+  .bike-container .bike-image.bike-lane.bike-2 {
+    left: 9%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 2s;
+    animation-duration: 4.5s;
+  }
+  
+  .bike-container .bike-image.bike-lane.bike-3 {
+    left: 9%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 5s;
+    animation-duration: 4.5s;
+  }
+
+  .section-2.car-image-lane2 {
+    left: 22.5%; /* Adjust the horizontal position (X-coordinate) for lane 2 in the second section */
+    top: 40%;
+  }
+  
+  .section-2.car-image-lane3 {
+    left: 36.5%; /* Adjust the horizontal position (X-coordinate) for lane 3 in the second section */
+    top: 40%;
+  }
+  
+  .bus-image.section-2 {
+    left: 22.5%; /* Adjust the horizontal position (X-coordinate) for the bus in the second section */
+    top: 40%; /* Adjust the vertical position (Y-coordinate) for the bus in the second section */
+  }
+
+.bus-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bus-container .bike-image.bike-lane.bike-1 {
+    left: 4.5%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 0s;
+    animation-duration: 4.5s;
+  }
+  
+  .bus-container .bike-image.bike-lane.bike-2 {
+    left: 4.5%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 3s;
+    animation-duration: 4.5s;
+  }
+  
+  .bus-container .bike-image.bike-lane.bike-3 {
+    left: 4.5%; /* Adjust the horizontal position (X-coordinate) for lane 3 */
+    animation-delay: 6s;
+    animation-duration: 4.5s;
+  }
+
+  .bus-container.section-3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .bus-container.section-3 .bus-image1,
+  .bus-container.section-3 .bus-image2,
+  .bus-container.section-3 .bus-image3 {
+    position: absolute;
+    width: 82px;
+    height: auto;
+    z-index: 1;
+    visibility: hidden;
+  
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  
+  .bus-container.section-3 .bus-image1 {
+    left: 11.5%;
+    animation-name: busAnim3-1;
+  }
+  
+  .bus-container.section-3 .bus-image2 {
+    left: 11.5%;
+    animation-name: busAnim3-2;
+    animation-delay: 4s;
+  }
+  
+  .bus-container.section-3 .bus-image3 {
+    left: 11.5%;
+    animation-name: busAnim3-3;
+    animation-delay: 7s;
+  }
+
+  .bus-container.section-3 .bus-wrapper {
+    position: absolute;
+    width: 100%; /* Adjust the width to match the background image */
+    height: 100%; /* Adjust the height to match the background image */
+    overflow: hidden; /* Hide any content outside the wrapper */
+  }
+  
+  
+  @keyframes busAnim3-1 {
+    0% { top: -150px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; }
+  }
+  
+  @keyframes busAnim3-2 {
+    0% { top: -150px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; }
+  }
+  
+  @keyframes busAnim3-3 {
+    0% { top: -150px; visibility: visible; }
+    100% { top: 100vh; visibility: visible; }
+  }
+  
+.car-image.car-image-lane3.section-3 {
+    left: 18.2%
+  }
+
+  .intro-text {
+    margin-top: 150px; /* Adjust this value to move the paragraph down */
+}
+
+.history {
+    border-radius: 10px;
+    margin-left: 1rem;
+    max-width: 100%;
+}
+
+.bottom-text {
+    padding-bottom: 40px;
+}

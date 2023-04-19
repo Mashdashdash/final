@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mbb2svw.css">
+    <link href="https://fonts.cdnfonts.com/css/mark-pro" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Safe Streets - More Info</title>
+</head>
+<body>
+
+    <header id="main-header">
+        <a href="index.html">
+            <div class="hand-wrapper">
+                <img src="images/hand.svg" alt="Hand" class="hand-image" />
+                <div class="popup-text">Home</div>
+            </div>
+        </a>
+        <h1>
+            <a href="#" style="text-decoration: none; color: inherit;">Safe Streets</a>
+        </h1>
+    </header>
+
+    <section class="more-info-container">
+        <div class="intro-text"></div>
+        <h2>About Safe Streets</h2>
+        <p>
+            Safe Streets is a project dedicated to promoting safer and more sustainable transportation options in urban areas. The goal is to encourage the development of infrastructure that supports alternative modes of transportation, such as biking and public transit, to reduce traffic congestion and improve overall quality of life for everyone.
+        </p>
+    </div>
+        <h2>Why Safer Streets?</h2>
+        <p>
+            Safer streets are important for several reasons:
+        </p>
+        <ul>
+            <li>Improved safety for all road users, including pedestrians, cyclists, and drivers</li>
+            <li>Reduced traffic congestion and improved air quality</li>
+            <li>Promotion of active transportation, leading to healthier communities</li>
+            <li>Enhanced access to public transit, making it a more attractive option for commuters</li>
+            <li>Increased economic activity in walkable and bike-friendly neighborhoods</li>
+        </ul>
+    
+        <h2>History of Streets in Montreal</h2>
+        <p>
+            One of Montreal's main streets, Rue Sherbrooke, was once pedestrain friendly and open for all. 
+            </p>
+            <p>
+                The history of Rue Sherbrooke can be traced back to the early 19th century, when it was originally laid out in 1817 as "Chemin des Sulpiciens." It was named after the Society of Saint-Sulpice, a Catholic order of priests who played a crucial role in the founding and development of Montreal.
+            </p>
+            <img src="images/rueSherbrooke1842.jpg" alt="Rue Sherbrooke 1842" class="history"></img>
+            <p>As the city grew and expanded, Rue Sherbrooke evolved into a major thoroughfare, connecting the eastern and western parts of the island of Montreal. It passes through several notable neighborhoods, such as the Golden Square Mile, which was once home to Canada's wealthiest families during the late 19th and early 20th centuries.</p>
+            <img src="images/rueSherbrooke1910.jpg" alt="Rue Sherbrooke and St-Denis 1910" class="history"></img>
+            <p class="bottom-text">Today, Rue Sherbrooke is lined with a diverse range of institutions, landmarks, and attractions. These include McGill University, the Musée des beaux-arts de Montréal, and the Montreal Museum of Fine Arts, as well as numerous shops, galleries, and restaurants. The street continues to be an essential part of Montreal's urban fabric, reflecting the city's rich history and vibrant present.</p>
+
+    </section>
+
+    <script src="javascript/street.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3"></script>
+
+    <script>
+       window.addEventListener('scroll', function() {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var handWrapper = document.querySelector(".hand-wrapper");
+  var handImage = document.querySelector(".hand-image");
+  var popUpText = document.querySelector(".pop-up-text");
+
+  handWrapper.addEventListener("mouseover", function() {
+    handImage.classList.add("flashing");
+    handWrapper.style.width = "200px";
+    handWrapper.style.borderRadius = "20px";
+  });
+
+  handWrapper.addEventListener("mouseout", function() {
+    handImage.classList.remove("flashing");
+    handWrapper.style.width = "50px";
+    handWrapper.style.borderRadius = "10px";
+  });
+
+  handWrapper.addEventListener("mouseover", function() {
+    popUpText.style.display = "block";
+  });
+
+  handWrapper.addEventListener("mouseout", function() {
+    popUpText.style.display = "none";
+  });
+
+  handImage.addEventListener("animationend", function() {
+    if (handImage.classList.contains("flashing")) {
+      handImage.style.backgroundImage = "url('ped.svg')";
+    } else {
+      handImage.style.backgroundImage = "url('hand.svg')";
+    }
+  });
+});
+
+
+  </script>
+
+</body>
+</html>
